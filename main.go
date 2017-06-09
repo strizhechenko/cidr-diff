@@ -52,8 +52,8 @@ func file2IPMap(filename string) map[string]bool {
 }
 
 func main() {
-	blacklist_file := flag.String("b", "tests/data/blacklists/ip_https_plus", "Blacklist filename")
-	whitelist_file := flag.String("w", "tests/data/workarounds/workaround.ip_https_plus_whitelist", "Blacklist filename")
+	blacklist_file := flag.String("b", "tests/data/blacklists/ip_https_plus", "Black list filename")
+	whitelist_file := flag.String("w", "tests/data/workarounds/workaround.ip_https_plus_whitelist", "White list filename")
 	flag.Parse()
 	blacklist := file2IPMap(*blacklist_file)
 	whitelist := file2IPMap(*whitelist_file)
