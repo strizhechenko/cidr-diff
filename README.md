@@ -2,7 +2,7 @@
 
 CLI tool for excluding IP from one IP/subnet list from second list.
 
-# Example:
+## Most useful when combined with aggregate
 
 ```
 $ cat ip 
@@ -10,19 +10,11 @@ $ cat ip
 192.168.0.10/32
 $ cat subnet
 192.168.0.0/28
-$ ./cidr-diff -b subnet -w ip | sort -n -t . -k1 -k2 -k3 -k4
+./cidr-diff -b subnet -w ip | aggregate -q
 192.168.0.0/32
-192.168.0.2/32
-192.168.0.3/32
-192.168.0.4/32
-192.168.0.5/32
-192.168.0.6/32
-192.168.0.7/32
-192.168.0.8/32
-192.168.0.9/32
+192.168.0.2/31
+192.168.0.4/30
+192.168.0.8/31
 192.168.0.11/32
-192.168.0.12/32
-192.168.0.13/32
-192.168.0.14/32
-192.168.0.15/32
+192.168.0.12/30
 ```
